@@ -1,0 +1,27 @@
+{
+  "name": "aromo-auth",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",  
+  "scripts": {
+    "start": "node --experimental-modules src/index.mjs &",
+    "stop": "kill -9 $(cat tmp/pid) && rm -r tmp",
+    "pretest": "node --experimental-modules src/index.mjs&",
+    "test": "mocha",
+    "posttest": "kill -9 $(cat tmp/pid) && rm -r tmp"
+  },
+  "author": "uclebits",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uclebots/aromo-auth.git"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.1",
+    "mocha": "^6.0.2"
+  },
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
