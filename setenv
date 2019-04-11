@@ -1,0 +1,7 @@
+#!/usr/bin/sh
+
+export CERTIFICATE_DIR=$1
+export PORT=8080
+
+echo "CERTIFICATE_DIR=$CERTIFICATE_DIR"
+echo "PORT=$PORT"
