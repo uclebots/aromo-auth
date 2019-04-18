@@ -2,7 +2,7 @@ const assert = require('assert'),
     chai = require('chai')
     chaiHttp = require('chai-http'),
     expect = chai.expect,
-    port = process.env.PORT
+    port = process.env.WEBSITE_PORT
 
 chai.use(chaiHttp)    
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'

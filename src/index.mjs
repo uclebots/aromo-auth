@@ -5,7 +5,7 @@ import conn from './dbconn'
 
 
 let 
-    port = process.env.PORT,
+    port = process.env.WEBSITE_PORT,
     certificateDirectory = process.env.CERTIFICATE_DIR,
     credentials = {
         key: fs.readFileSync(`${certificateDirectory}/key.pem`), 

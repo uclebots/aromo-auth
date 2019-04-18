@@ -1,7 +1,29 @@
 #!/usr/bin/sh
 
-export CERTIFICATE_DIR=$1
-export PORT=8080
+read -p "Certificate directory: " CERTIFICATE_DIR
+
+read -p "MySql root password: " MYSQL_ROOT_PASSWORD
+read -p "Web application port: " WEBSITE_PORT
+read -p "Web application DB host: " AROMO_DB_HOST
+read -p "Web application DB port: " AROMO_DB_PORT
+read -p "Web application DB user: " AROMO_DB_USER
+read -p "Web application DB password: " AROMO_DB_PASSWORD
+read -p "Web application DB name: " AROMO_DB_NAME
+
+export CERTIFICATE_DIR
+export WEBSITE_PORT
+export MYSQL_ROOT_PASSWORD
+export AROMO_DB_HOST
+export AROMO_DB_PORT
+export AROMO_DB_USER
+export AROMO_DB_PASSWORD
+export AROMO_DB_NAME
 
 echo "CERTIFICATE_DIR=$CERTIFICATE_DIR"
-echo "PORT=$PORT"
+echo "WEBSITE_PORT=$WEBSITE_PORT"
+echo "MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD"
+echo "AROMO_DB_HOST=$AROMO_DB_HOST"
+echo "AROMO_DB_PORT=$AROMO_DB_PORT"
+echo "AROMO_DB_USER=$AROMO_DB_USER"
+echo "AROMO_DB_PASSWORD=$AROMO_DB_PASSWORD"
+echo "AROMO_DB_NAME=$AROMO_DB_NAME"

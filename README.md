@@ -1,9 +1,20 @@
 # aromo-auth
 ## Desarrollo
 ### Comandos
+#### Una vez por creación de Vagrant VM
+<pre>
+    . setenv
+    vagrant up
+</pre>    
+
+#### Destrucción Vagrant VM
+<pre>
+    vagrant destroy
+</pre>    
+
 #### Una vez por sesión de línea de comandos
 <pre>
-    . setenv <cert path>
+    . setenv
 </pre>    
 #### Iniciar/detener servicio
 <pre>
