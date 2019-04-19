@@ -12,16 +12,21 @@
     vagrant destroy
 </pre>    
 
-#### Una vez por sesión de línea de comandos
+#### Iniciar servicio
 <pre>
-    . setenv
-</pre>    
-#### Iniciar/detener servicio
-<pre>
+    vagrant ssh
+    cd /vagrant
     npm start
+</pre>
+#### Detener servicio
+<pre>
+    vagrant ssh
+    cd /vagrant
     npm stop
 </pre>
 #### Test
 <pre>
+    vagrant ssh
+    cd /vagrant
     npm test
 </pre>
