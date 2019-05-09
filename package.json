@@ -7,7 +7,7 @@
     "start": "node --experimental-modules src/index.mjs &",
     "stop": "kill -9 $(cat tmp/pid) && rm -r tmp",
     "pretest": "node --experimental-modules src/index.mjs&",
-    "test": "mocha",
+    "test": "mocha --require @babel/register",
     "posttest": "kill -9 $(cat tmp/pid) && rm -r tmp"
   },
   "author": "uclebits",
@@ -17,9 +17,15 @@
     "url": "https://github.com/uclebots/aromo-auth.git"
   },
   "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/register": "^7.4.0",
     "chai": "^4.2.0",
     "chai-http": "^4.2.1",
-    "mocha": "^6.0.2"
+    "mocha": "^6.0.2",
+    "sinon": "^7.3.2"
   },
   "dependencies": {
     "express": "^4.16.4",

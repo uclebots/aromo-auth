@@ -1,16 +1,22 @@
 import express from 'express'
+import UserRepo from './user-repo'
 import PasswordValidator from './pwd-validator'
 
-let app = express()    
+let app = express(),
+    repo = new UserRepo(),
+    validator = new PasswordValidator(repo)
+
+repo.init()
 
 app.use(express.json())
 app.post('/sessions', function (req, res) {
-    try {
-        authenticate(credentials(req))    
-        sendCreated(res)
-    } catch (ex) {
-        sendForbidden(res)
-    }
+    authenticate(credentials(req))
+        .then((result) => {
+            sendCreated(res)
+        })
+        .catch(() => {
+            sendForbidden(res)
+        })
 })
 
 function credentials(req) {
@@ -18,7 +24,7 @@ function credentials(req) {
 }
 
 function authenticate(credentials) {
-    PasswordValidator.validate(credentials)    
+    return validator.validate(credentials)    
 }
 
 function sendCreated(res) {
