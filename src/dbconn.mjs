@@ -7,10 +7,11 @@ let dbConfig = {
       port: parseInt(process.env.AROMO_DB_PORT),
       database: process.env.AROMO_DB_NAME
     },
-    con = MySql.createConnection(dbConfig)
+    con
 
 export default {
     init: function() {
+      con = MySql.createConnection(dbConfig)
       con.connect(function(err) {
         if (err) throw err;
         console.log("Connected!");

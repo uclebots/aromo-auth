@@ -1,0 +1,4 @@
+git clone https://github.com/P-H-C/phc-winner-argon2.git
+make
+make test
+make install PREFIX=/usr

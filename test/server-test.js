@@ -14,6 +14,7 @@ process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'
 describe('Auth integration test', function () {    
     let conn
     before(function() {
+        DbConnection.init()
         conn = DbConnection.get()
         conn.query("INSERT INTO user (user, password) VALUES (?, ?)", [username, password])
     })
